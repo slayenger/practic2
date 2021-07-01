@@ -8,17 +8,27 @@ struct Node {
 // Инициализации элемента односвязного списка нулями
 
 void init(Node* node) {
-
+    node->val = 0;
+    node->next = NULL;
 }
 
 // Отображения односвязного списка на экран
 void show(Node* head) {
+    while (head->val != NULL) {
 
+        cout << head->val << " ";
+        head = head->next;
+    }
 }
 
 // Добавления элемента в односвязный список
 void pushNode(Node* head,Node* node) {
-
+    int push_count = 0;
+    while (head->next != NULL)
+        head = head->next;
+    head->next = node;
+    node->next = NULL;
+    push_count += 1;
 } 
 
 
